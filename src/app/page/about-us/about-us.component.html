@@ -1,0 +1,68 @@
+<app-navbar [cartCount]="cart.length" (cartClick)="handleOpenCart()"></app-navbar>
+    
+<div class="founders">
+     <app-beerloading *ngIf="isLoading"></app-beerloading>
+                <div class="about-us-container">
+                    <h1>Quiénes Somos</h1>
+                    <p>
+                        Idiyü Vapa nació del sueño de tres amigos apasionados por las cervezas artesanales. 
+                        Cada uno con una profesión distinta, pero unidos por un objetivo común: 
+                        compartir los sabores únicos y auténticos de las cervezas artesanales con el mundo.
+                    </p>
+                    <div class="founders">
+                        <div class="founder">
+                            <img src="/image/founder1.png" alt="Fundador 1" class="founder-image" />
+                            <h3>Juan Pérez</h3>
+                            <p>Maestro Cervecero</p>
+                            <p>
+                                Juan es el corazón detrás de las recetas únicas de Idiyü Vapa. 
+                                Con años de experiencia en la elaboración de cervezas, 
+                                se asegura de que cada botella sea una obra maestra.
+                            </p>
+                        </div>
+                        <div class="founder">
+                            <img src="/images/founder2.png" alt="Fundador 2" class="founder-image" />
+                            <h3>María López</h3>
+                            <p>Diseñadora Gráfica</p>
+                            <p>
+                                María es la mente creativa detrás de la identidad visual de Idiyü Vapa. 
+                                Desde las etiquetas hasta el diseño de la marca, su talento da vida a nuestra visión.
+                            </p>
+                        </div>
+                        <div class="founder">
+                            <img src="/images/founder3.png" alt="Fundador 3" class="founder-image" />
+                            <h3>Carlos Gómez</h3>
+                            <p>Especialista en Marketing</p>
+                            <p>
+                                Carlos es el encargado de llevar Idiyü Vapa al mundo. 
+                                Con su experiencia en marketing, conecta nuestra pasión con los amantes de la cerveza artesanal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="founder">
+                    <h3>Metodos de Pago</h3>
+                            <p>Por Ahora contamos con 2 metodos de pagos:</p>
+                            <p>
+                                Transferencia: cuando usted confirme el pedido recibira
+                                un correo electronico con el detalle de la cuenta a 
+                                tranferir el monto total a pagar.
+                            </p>
+                            <p>
+                                Pago en puerta: cuando usted confirme el pedido recibira
+                                un correo electronico con la información más detallada y 
+                                deberá pagar el día que reciba los pack de cervezas que ordeno, 
+                                podrá pagar por transferencia o efectivo.
+                            </p>
+                </div>
+            </div>
+
+
+<app-beerscart
+  *ngIf="showCartModal"
+  [cart]="cart"
+  (close)="handleCloseCart()"
+  (removeFromCart)="handleRemoveFromCart($event)"
+  (placeOrder)="handlePlaceOrder($event)"
+  (clearCart)="handleClearCart()"
+></app-beerscart>

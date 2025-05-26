@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/82579108-c8c8-42b7-8600-7b7595d8cbd5/resourceGroups/RG-EUS-DVP-DEVTEST-001/providers/Microsoft.Web/sites/test-idiyü-vapa",
+    "appService.deploySubpath": "dist"
+}

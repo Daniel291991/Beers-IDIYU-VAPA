@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: url('./assets/image/idiyu_p.png') no-repeat center center; /* URL de la imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 20px 20px; 
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    body {
+        background: url('./assets/image/idiyu_vapa_mobile.png') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}

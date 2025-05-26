@@ -1,0 +1,48 @@
+<div class="cart">
+  <div class="cart-modal">
+    <div class="cart-modal-content">
+      <button class="close-button-top-right" (click)="close.emit()">X</button>
+      <h3>Carrito de Compras</h3>
+      <ul>
+        <li *ngFor="let item of cart" class="cart-item">
+          <img [src]="item.image" [alt]="item.name" class="cart-item-image" />
+          <div class="cart-item-details">
+            <p><strong>{{ item.name }}</strong></p>
+            <p><strong>Cant pack: {{ item.cant || 1 }}</strong></p> 
+            <p>Pack: {{ item.pack }}</p>
+            <p>Precio x Detalle: ${{ item.price }}</p>
+          </div>
+          <button class="remove-button" (click)="removeFromCart.emit({ guid: item.Guid, pack: item.pack })">
+            X
+          </button>
+        </li>
+      </ul>
+      <p class="cart-total">Botellas: {{ totalBottles }}</p>
+      <p class="cart-Sub-total"><strong>Sub-Total:</strong> ${{ subTotal }}</p>
+      <p class="cart-Descuento"><strong>Descto:</strong> ${{ discount }}</p>
+      <p class="cart-total"><strong>Total:</strong> ${{ total }}</p>
+
+      <button *ngIf="!showCheckout" class="checkout-button" (click)="handleCheckout()">
+        Finalizar Compra
+      </button>
+
+      <form *ngIf="showCheckout" class="checkout-form" (ngSubmit)="handlePlaceOrder()" #form="ngForm">
+        <h4>Datos de Contacto</h4>
+        <input type="text" placeholder="Nombre Completo" [(ngModel)]="contactName" name="contactName" required/>
+        <input type="email" placeholder="Correo Electrónico" [(ngModel)]="contactEmail" name="contactEmail" required/>
+        <input type="text" placeholder="Dirección de Envío" [(ngModel)]="contactAddress" name="contactAddress" required/>
+        <input type="tel" placeholder="Teléfono" [(ngModel)]="contactPhone" name="contactPhone" required/>
+        <button type="submit" [disabled]="form.invalid" class="place-order-button">Realizar Pedido</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Popup de confirmación -->
+<app-confirmation
+        *ngIf="showConfirmation"
+        [orderDetails]="orderDetails"
+        [subtotal]="subTotal"
+        [descto]="discount"
+        [total]="total"
+        (onClose)="handleClearCart()"
+></app-confirmation>

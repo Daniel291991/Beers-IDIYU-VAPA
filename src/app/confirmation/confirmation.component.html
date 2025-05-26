@@ -1,0 +1,54 @@
+<div class="modal">
+  <div class="modal-content-pedido">
+    <h2>¡Pedido Confirmado!</h2>
+    <h4>Resumen del Pedido:</h4>
+    <ul>
+      <li *ngFor="let item of orderDetails?.items" class="cart-item">
+        <img [src]="item.image" [alt]="item.name" class="cart-item-image" />
+        <div class="cart-item-details">
+          <p><strong>{{ item.name }}</strong></p>
+          <p>Pack: {{ item.pack }}</p>
+          <p>Cantidad de Pack: {{ item.cant }}</p>
+          <p>Cantidad: {{ item.quantity }}</p>
+        </div>
+      </li>
+    </ul>
+
+    <h4>Selecciona forma de pago:</h4>
+    <div class="payment-options">
+      <label>
+        <input type="radio" name="paymentMethod" [(ngModel)]="paymentMethod" value="transferencia" />
+        <i class="fas fa-university"></i> Transferencia
+      </label>
+      <label>
+        <input type="radio" name="paymentMethod" [(ngModel)]="paymentMethod" value="puerta" />
+        <i class="fas fa-credit-card"></i> Pago en puerta
+      </label>
+    </div>
+    <p class="cart-Sub-total"><strong>Sub-Total:</strong> ${{ subtotal }}</p>
+    <p class="cart-Descuento"><strong>Descto:</strong> ${{ descto }}</p>
+    <p class="cart-total"><strong>Total:</strong> ${{ total }}</p>
+    <h4>Datos de Contacto:</h4>
+    <p><strong>Nombre:</strong> {{ orderDetails?.contact?.name }}</p>
+    <p><strong>Email:</strong> {{ orderDetails?.contact?.email }}</p>
+    <p><strong>Dirección:</strong> {{ orderDetails?.contact?.address }}</p>
+    <p><strong>Teléfono:</strong> {{ orderDetails?.contact?.phone }}</p>
+    <div class="close-div">
+      <button class="close-button-cancel" (click)="cancelAndClose()">Cancelar</button>
+      <button class="close-button-confirm" (click)="confirmAndClose()" [disabled]="!paymentMethod">Confirmar</button>
+    </div>
+    <!-- Popup amigable de confirmación de cancelación -->
+    <div *ngIf="showCancelPopup" class="custom-popup-overlay">
+      <div class="custom-popup">
+        <p>¿Desea cancelar el pedido o seguir viendo?</p>
+        <button class="close-button-cancel" (click)="confirmCancel()">Cancelar pedido</button>
+        <button class="close-button-confirm" (click)="keepViewing()">Seguir viendo</button>
+      </div>
+    </div>
+    <div *ngIf="showConfirmPopup" class="custom-popup-overlay">
+      <div class="custom-popup">
+        <p>¡Pedido Confirmado, Pronto recibiras un correo con la información!</p>
+      </div>
+    </div>
+  </div>
+</div>

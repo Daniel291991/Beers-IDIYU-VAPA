@@ -1,0 +1,138 @@
+/* Estilos base */
+.header {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo, el menú y el carrito */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.39); /* Fondo negro semi-transparente */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.logo img {
+    width: 40px; /* Tamaño del logo */
+    height: 40px;
+    object-fit: contain;
+}
+
+.navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centra el menú horizontalmente */
+    align-items: center;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .menu li {
+    margin: 0 15px;
+}
+
+.navbar .menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar .menu a:hover {
+    background-color: #767778; /* Azul más oscuro */
+    transform: scale(1.05);
+}
+
+.cart-icon {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.cart-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cart-icon img:hover {
+    transform: scale(1.35);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+/* Para pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        padding: 10px;
+    }
+
+    .navbar {
+        justify-content: flex-start; /* Alinea el menú al inicio */
+        width: 100%;
+    }
+
+    .navbar .menu {
+        flex-direction: column; /* Cambia el menú a una columna */
+        width: 100%;
+    }
+
+    .navbar .menu li {
+        margin: 10px 0; /* Espaciado entre los elementos del menú */
+    }
+
+    .cart-icon {
+        align-self: flex-end; /* Alinea el carrito al final */
+        margin-top: 10px;
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .logo img {
+        width: 30px; /* Reduce el tamaño del logo */
+        height: 30px;
+    }
+
+    .navbar .menu a {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+        padding: 8px 10px;
+    }
+
+    .cart-icon {
+        width: 30px; /* Reduce el tamaño del ícono del carrito */
+        height: 30px;
+    }
+
+    .cart-count {
+        width: 18px; /* Ajusta el tamaño del contador */
+        height: 18px;
+        font-size: 0.7rem;
+    }
+}

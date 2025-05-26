@@ -1,0 +1,372 @@
+.menu-container {
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.beer-section {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 1.5px 8px rgba(0,0,0,0.18);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.beer-margen {
+  margin: 10px 0 10px 0; /* Margen superior e inferior, puedes ajustar los valores */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-position: center;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.beer-section:hover {
+    transform: scale(1.05);
+    
+}
+
+.beer-section h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.beer-section p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.close-button {
+    background-color: #2A4D69; /* Azul petróleo */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.close-button:hover {
+    background-color: #1E354D; /* Azul más oscuro */
+}
+
+.beer-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px; /* Aumenta el radio para bordes más redondeados */
+    margin-bottom: 15px; /* Aumenta el margen inferior para más espacio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra para destacar la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade transición para animaciones */
+}
+
+.button-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checkout-button {
+    background-color: #FFD700; /* Dorado */
+    color: #333; /* Texto oscuro */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.checkout-button:hover {
+    background-color: #FFC107; /* Dorado más claro */
+}
+
+.checkout-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-form h4 {
+    margin-bottom: 10px;
+    color: #FFD700; /* Dorado */
+    text-align: center;
+}
+
+.checkout-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.place-order-button {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.place-order-button:hover {
+    background-color: #218838; /* Verde más oscuro */
+}
+
+/* Modales */
+.modal-cervezas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px; /* Espaciado interno para dispositivos pequeños */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    overflow-y: auto; /* Habilita el scroll si el contenido excede la altura */
+}
+
+.modal-cervezas-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: auto; /* Ajusta el ancho dinámicamente al contenido */
+    max-width: 90%; /* Limita el ancho máximo al 90% de la pantalla */
+    max-height: 90%; /* Limita la altura máxima al 90% de la pantalla */
+    overflow-y: auto; /* Habilita el scroll si el contenido excede la altura */
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido esté en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+
+}
+
+.modal-cervezas-content img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del modal */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.modal-cervezas-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.modal-cervezas-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en varias filas */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    margin-top: 20px;
+}
+
+.modal-cervezas-buttons img {
+    width: 250px; /* Ajusta el ancho de las imágenes */
+    height: 250px; /* Ajusta la altura de las imágenes */
+    object-fit: contain; /* Asegura que las imágenes mantengan su proporción */
+    margin-bottom: 5px; /* Espaciado entre la imagen y el texto */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-cervezas-buttons button {
+    flex: 1 1 120px; /* Aumenta el tamaño mínimo de los botones */
+    max-width: 180px; /* Aumenta el ancho máximo de los botones */
+    padding: 15px; /* Aumenta el padding interno */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.close-button {
+    background-color: #dc3545;
+    color: #fbf7f7;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.close-button:hover {
+    background-color: #d86773; /* Azul más oscuro */
+}
+
+.remove-button {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+}
+
+.close-button-top-right {
+    position: absolute;
+    top: 10px; /* Ajusta según sea necesario */
+    right: 10px; /* Ajusta según sea necesario */
+    background-color: #2A4D69; /* Azul petróleo */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1001; /* Asegura que el botón esté por encima del contenido del modal */
+}
+
+.close-button-top-right:hover {
+    background-color: #1E354D; /* Azul más oscuro */
+}
+
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+.loading-indicator::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #2A4D69; /* Color del spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Para pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Usa casi todo el ancho de la pantalla */
+        max-width: 400px; /* Reduce el ancho máximo */
+        padding: 15px; /* Reduce el padding interno */
+    }
+
+    .modal-buttons img {
+        width: 60px; /* Reduce el tamaño de las imágenes */
+        height: 60px;
+    }
+
+    .modal-buttons button {
+        flex: 1 1 100px; /* Ajusta el tamaño mínimo de los botones */
+        max-width: 150px; /* Ajusta el ancho máximo */
+        padding: 10px; /* Reduce el padding interno */
+    }
+
+    .modal-buttons {
+        flex-direction: column; /* Los botones se apilan verticalmente */
+        flex-wrap: wrap; /* Permite que los botones se ajusten en varias filas */
+        gap: 15px; /* Espaciado entre los botones */
+    }
+
+    .modal-buttons button {
+        flex: 1 1 auto; /* Los botones ocupan todo el ancho disponible */
+        max-width: none; /* Elimina el ancho máximo */
+    }
+    .menu-container {
+        gap: 10px;
+    }
+    .beer-section {
+        width: 45vw;
+        max-width: 220px;
+        height: 220px;
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 10px; /* Reduce aún más el padding */
+    }
+
+    .modal-buttons img {
+        width: 50px; /* Reduce aún más el tamaño de las imágenes */
+        height: 50px;
+    }
+
+    .modal-buttons button {
+        flex: 1 1 80px; /* Ajusta el tamaño mínimo de los botones */
+        max-width: 120px; /* Ajusta el ancho máximo */
+        padding: 8px; /* Reduce el padding interno */
+    }
+
+    .modal-buttons button {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+        padding: 8px; /* Reduce el padding de los botones */
+    }
+    .menu-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .beer-section {
+        width: 90vw;
+        max-width: 98vw;
+        height: 180px;
+        margin: 8px auto;
+    }
+    .beer-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+

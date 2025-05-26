@@ -1,0 +1,15 @@
+<header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="image/favicon-32x32.png" alt="Logo" />
+                </div>
+                <ul class="menu">
+                    <li><a routerLink="/about-us">Quiénes Somos</a></li>
+                    <li><a routerLink="/beers">Cervezas</a></li>
+                </ul>
+                <div class="cart-icon" (click)="openCart()">
+                <img src="image/cerveza.png" alt="Carrito" />
+                    <span class="cart-count">{{cartCount}}</span>
+                </div>
+            </nav>
+</header>
