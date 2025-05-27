@@ -121,10 +121,10 @@ export class BeersCompanyService {
         stock: 'Con Stock',
         quality: 'Premium',
         color: '#28a745',
-        image: 'image/label/idiyu_barril_1.png',
+        image: 'image/pack/idiyu_vapa_barril_2.png',
         price: 120000,
         packImages: {
-          'hazy ipa': 'image/label/hazy-ipa.png',
+          '1 botella': 'image/label/hazy-ipa.png',
           'stout': 'image/label/stout.png',
           'ambar': 'image/label/ambar.png',
           'golde strong': 'image/label/golden-strong.png',
